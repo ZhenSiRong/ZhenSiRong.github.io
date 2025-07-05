@@ -1,13 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DataPro - 数据人导航</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Keep existing styles, add/modify below */
+        
+        /* New Category Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 0 5%;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #27ae60;
+        }
+        
+        .category-icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #27ae60;
+        }
+        
+        .category-links a {
+            display: block;
+            padding: 0.6rem 0;
+            color: #34495e;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .category-links a:hover {
+            color: #27ae60;
+            transform: translateX(5px);
+        }
+        
+        /* Search Bar */
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+        
+        .search-box {
+            display: flex;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            outline: none;
+        }
+        
+        .search-box button {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Long Wei Xuan</h1>
-        <h2>AI major</h2>
-    <link rel="stylesheet" href="https://zhensirong.github.io/">
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DataPro</div>
+            <div class="nav-links">
+                <a href="#tools">工具</a>
+                <a href="#learning">学习</a>
+                <a href="#community">社区</a>
+                <a href="#datasets">数据集</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" style="background: linear-gradient(rgba(40, 167, 69, 0.8), rgba(33, 150, 243, 0.8));">
+        <div class="hero-content">
+            <h1>数据科学导航平台</h1>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索数据工具/资源...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-courses" id="tools">
+        <div class="section-title">
+            <h2>常用数据工具</h2>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code category-icon"></i>
+                    <h3>编程分析</h3>
+                </div>
+                <div class="category-links">
+                    <a href="https://jupyter.org/">Jupyter Notebook</a>
+                    <a href="https://colab.research.google.com/">Google Colab</a>
+                    <a href="https://www.r-project.org/">R Studio</a>
+                    <a href="https://www.anaconda.com/">Anaconda</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-database category-icon"></i>
+                    <h3>数据库</h3>
+                </div>
+                <div class="category-links">
+                    <a href="https://www.mysql.com/">MySQL</a>
+                    <a href="https://www.mongodb.com/">MongoDB</a>
+                    <a href="https://redis.io/">Redis</a>
+                    <a href="https://www.postgresql.org/">PostgreSQL</a>
+                </div>
+            </div>
+            
+            <!-- Add more categories following same structure -->
+        </div>
+    </section>
+
+    <!-- Additional sections for Learning, Community etc. -->
+    <section class="featured-courses" id="learning" style="background:#f0f7ff;">
+        <div class="section-title">
+            <h2>学习资源</h2>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-header">
+                    <i class="fas fa-graduation-cap category-icon"></i>
+                    <h3>在线课程</h3>
+                </div>
+                <div class="category-links">
+                    <a href="https://www.kaggle.com/learn">Kaggle Learn</a>
+                    <a href="https://www.coursera.org/">Coursera</a>
+                    <a href="https://www.datacamp.com/">DataCamp</a>
+                </div>
+            </div>
+            
+            <!-- More categories... -->
+        </div>
+    </section>
+
+    <script>
+        // Keep existing smooth scroll script
+        // Add search functionality
+        document.querySelector('.search-box button').addEventListener('click', function() {
+            const query = document.querySelector('.search-box input').value;
+            if(query.trim()) {
+                alert(`执行搜索: ${query} - 实际应用中这里调用搜索API`);
+                // window.location.href = `/search?q=${encodeURIComponent(query)}`;
+            }
+        });
+    </script>
 </body>
 </html>
